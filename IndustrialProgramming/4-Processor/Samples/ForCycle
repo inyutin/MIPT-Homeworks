@@ -1,0 +1,9 @@
+in
+push 0
+: for
+push 1
+add
+je end
+jmp for
+: end
+out
