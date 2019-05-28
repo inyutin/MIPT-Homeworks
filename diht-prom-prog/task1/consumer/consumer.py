@@ -16,7 +16,7 @@ def callback(ch, method, properties, body):
     logging.info("Recieved number {}".format(body.decode("utf-8")))
 
 
-channel.basic_consume(callback, queue='numbers', no_ack=True)
+channel.basic_consume('numbers', callback, auto_ack=True)
 
 while True:
     try:
